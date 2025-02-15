@@ -42,7 +42,7 @@ jobs:
       - name: Build release binary
         run: |
           if [[ "${{ matrix.os }}" == "macos-latest" ]]; then
-            cargo build --release --target ${{ matrix.arch }}-apple-darwin
+            cargo xtask bundle bitfiddler --release --target ${{ matrix.arch }}-apple-darwin
           else
             cargo xtask bundle bitfiddler --release
           fi
